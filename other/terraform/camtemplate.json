@@ -1,45 +1,62 @@
 {
-  "name": "Infoblox Integration",
-  "description": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
-  "version": "1.0",
-  "imageUrl": "",
-  "image": "",
-  "type": "integration",
-  "status": "active",
-  "manifest": {
-    "template_type": "Terraform",
-    "template_format": "HCL",
-    "template_provider": "Other",
-    "template": {
-      "templateData": "",
-      "templateVariables": "",
-      "templateOutput": ""
-    },
-    "template_source": {
-      "githubRepoUrl": "",
-      "githubAccessToken": "",
-      "relativePathToTemplateFolder": "other/terraform",
-      "templateFileName": "main.tf"
-    }
-  },
-  "metadata": {
-    "displayName": "Infoblox Integration",
-    "providerDisplayName": "Other",
-    "longDescription": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
-    "bullets": [{
-  "title": "Clouds",
-  "description": " Other<br>"},
-{
-  "title": "Usage and Special Notes",
-  "description": "The Infoblox Integration module, with an output of assigned_ip_address, can be composed with other Terraform configurations which require an IP address as input.<br>"}
-],
-    "bullets": [ ],
-    "featuredImageUrl": "",
-    "imageUrl": "",
-    "mediumImageUrl": "",
-    "smallImageUrl": "",
-    "documentationUrl": "",
-    "termsUrl": "",
-    "media": []
-  }
+	"name": "Infoblox Integration",
+	"description": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
+	"version": "1.0",
+	"imageUrl": "",
+	"image": "",
+	"type": "integration",
+	"status": "active",
+	"manifest": {
+		"template_type": "Terraform",
+		"template_format": "HCL",
+		"template_provider": "Other",
+		"template": {
+			"templateData": "",
+			"templateVariables": "",
+			"templateOutput": ""
+		},
+		"template_source": {
+			"githubRepoUrl": "",
+			"githubAccessToken": "",
+			"relativePathToTemplateFolder": "other/terraform",
+			"templateFileName": "main.tf"
+		}
+	},
+	"metadata": {
+		"displayName": "Infoblox Integration",
+		"providerDisplayName": "Other",
+		"longDescription": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
+		"bullets": [{
+				"title": "Clouds",
+				"description": " Other<br>"
+			},
+			{
+				"title": "Operating Systems Supported",
+				"description": "N/A, Execution occurs on the CAM engine<br>"
+			},
+			{
+				"title": "Topology",
+				"description": "N/A<br>"
+			},
+			{
+				"title": "Software Deployed",
+				"description": "N/A<br>"
+			},
+			{
+				"title": "Default Virtual Machine Settings",
+				"description": "N/A<br>"
+			},
+			{
+				"title": "Usage and Special Notes",
+				"description": "The Infoblox Integration module, with an output of assigned_ip_address, can be composed with other Terraform configurations which require an IP address as input.<br>"
+			}
+		],
+		"featuredImageUrl": "",
+		"imageUrl": "",
+		"mediumImageUrl": "",
+		"smallImageUrl": "",
+		"documentationUrl": "",
+		"termsUrl": "",
+		"media": []
+	}
 }
