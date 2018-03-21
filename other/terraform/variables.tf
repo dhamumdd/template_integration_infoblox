@@ -24,6 +24,7 @@ variable "infoblox_user" { type = "string" description = "The user name to acces
 variable "infoblox_user_password" { type = "string" description = "The user password to access the Infoblox server" }
 variable "network" { type = "string" description = "The network from which to get an IP address" }
 variable "hostname" { type = "string" description = "The hostname to associate with the IP address" }
+variable "domain" { type = "string" description = "The domain to associate with the IP address" }
 
 ##############################################################
 # Result variables. Terraform requires variables rather

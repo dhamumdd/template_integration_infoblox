@@ -1,108 +1,101 @@
 {
+  "input_datatypes": [  
+    {
+        "name": "com.infoblox"
+    }
+    ],
   "template_input_params": [
     {
-      "name": "assigned_ip_address",
-      "description": "The IP address assigned from Infoblox IPAM",
-      "default": "ipaddress",
-      "type": "string",
-      "required": true,
-      "secured": false,
-      "label": "assigned_ip_address",
-      "hidden": true,
-      "immutable": true
-    },
-    {
-      "name": "associated_domain",
-      "description": "The domain associated with the assigned IP address",
-      "default": "domain",
-      "type": "string",
-      "required": true,
-      "secured": false,
-      "label": "associated_domain",
-      "hidden": true,
-      "immutable": true
-    },
-    {
-      "name": "associated_hostname",
-      "description": "The hostname associated with the assigned IP address",
-      "default": "hostname",
-      "type": "string",
-      "required": true,
-      "secured": false,
-      "label": "associated_hostname",
-      "hidden": true,
-      "immutable":true
-    },
-    {
       "name": "hostname",
-      "description": "The fully qualified domain name to associate with the requested IP address",
+      "description": "The hostname to associate with the requested IP address.",
       "type": "string",
       "required": true,
       "secured": false,
-      "label": "Fully Qualified Domain Name",
+      "label": "Host Name",
       "hidden": false,
+      "group_name": "infoblox",
       "immutable": false
     },
     {
+      "name": "domain",
+      "description": "The domain name to associate with the host names on the requested IP address.",
+      "type": "string",
+      "required": true,
+      "secured": false,
+      "label": "Domain Name",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox",
+      "default": "${com.infoblox.domain}"
+    },
+    {
       "name": "infoblox_ip_address",
-      "description": "The IP address of the Infoblox server",
+      "description": "The IP address of the Infoblox server.",
       "type": "string",
       "required": true,
       "secured": false,
       "label": "Infoblox Server IP Address",
       "hidden": false,
-      "immutable": false
+      "immutable": false,
+      "group_name": "infoblox",
+      "default": "${com.infoblox.infoblox_ip_address}"
     },
     {
       "name": "infoblox_user",
-      "description": "The user name to access the Infoblox server",
+      "description": "The user name to access the Infoblox server.",
       "type": "string",
       "required": true,
       "secured": false,
       "label": "Infoblox User",
       "hidden": false,
-      "immutable": false
+      "immutable": false,
+      "group_name": "infoblox",
+      "default": "${com.infoblox.infoblox_user}"
     },
     {
       "name": "infoblox_user_password",
-      "description": "The user password to access the Infoblox server",
-      "type": "string",
+      "description": "The user password to access the Infoblox server.",
+      "type": "password",
       "required": true,
-      "secured": true,
+      "secured": false,
       "label": "Infoblox User Password",
       "hidden": false,
-      "immutable": false
+      "immutable": false,
+      "group_name": "infoblox",
+      "default": "${com.infoblox.infoblox_user_password}"
     },
     {
       "name": "network",
-      "description": "The network defined in Infoblox from which to get an IP address",
+      "description": "The network defined in Infoblox from which to get an IP address.",
       "type": "string",
       "required": true,
       "secured": false,
       "label": "Network",
       "hidden": false,
-      "immutable": false
+      "immutable": false,
+      "group_name": "infoblox",
+      "default": "${com.infoblox.network}"
     }
   ],
   "template_output_params": [
     {
       "name": "assigned_ip_address",
       "label": "Assigned IP Address",
-      "description": "The IP address assigned from Infoblox IPAM",
+      "description": "The IP address assigned from Infoblox IPAM.",
       "secured": false,
       "hidden": false
     },
     {
       "name": "associated_domain",
       "label": "Associated Domain",
-      "description": "The domain associated with the assigned IP address",
+      "description": "The domain associated with the assigned IP address.",
       "secured": false,
       "hidden": false
     },
     {
       "name": "associated_hostname",
       "label": "Associated Hostname",
-      "description": "The hostname associated with the assigned IP address",
+      "description": "The hostname associated with the assigned IP address.",
       "secured": false,
       "hidden": false
     }

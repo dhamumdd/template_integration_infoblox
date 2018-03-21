@@ -26,6 +26,10 @@
     {
       "name": "wasnode01",
       "label": "WASNode01"
+    },
+    {
+      "name": "infoblox",
+      "label": "Infoblox Input Variables"
     }
   ],
   "output_groups": [
@@ -336,17 +340,6 @@
       "description": "IPv4 gateway for vNIC configuration",
       "hidden": false,
       "label": "Virtual Machine Gateway Address - WASNode01",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "group_name": "virtualmachine"
-    },
-    {
-      "name": "WASNode01_ipv4_address",
-      "type": "string",
-      "description": "IPv4 address for vNIC configuration",
-      "hidden": false,
-      "label": "Virtual Machine IP Address - WASNode01",
       "secured": false,
       "required": true,
       "immutable": false,
@@ -681,6 +674,50 @@
       "required": false,
       "immutable": false,
       "group_name": "virtualmachine"
+    },
+    {
+      "name": "infoblox_ip_address",
+      "description": "The IP address of the Infoblox server",
+      "type": "string",
+      "required": true,
+      "secured": false,
+      "label": "Infoblox Server IP Address",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox"
+    },
+    {
+      "name": "infoblox_user",
+      "description": "The user name to access the Infoblox server",
+      "type": "string",
+      "required": true,
+      "secured": false,
+      "label": "Infoblox User",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox"
+    },
+    {
+      "name": "infoblox_user_password",
+      "description": "The user password to access the Infoblox server",
+      "type": "password",
+      "required": true,
+      "secured": true,
+      "label": "Infoblox User Password",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox"
+    },
+    {
+      "name": "network",
+      "description": "The network defined in Infoblox from which to get an IP address",
+      "type": "string",
+      "required": true,
+      "secured": false,
+      "label": "Network",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox"
     }
   ],
   "template_output_params": [

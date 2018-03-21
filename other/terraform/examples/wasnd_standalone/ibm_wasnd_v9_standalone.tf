@@ -376,14 +376,35 @@ variable "WASNode01_root_disk_size" {
   default = "100"
 }
 
-module "infoblox_integration" {
-  source = "git@github.ibm.com/OpenContent/template_integration_infoblox//other/terraform"
+variable "infoblox_ip_address" {
+  type = "string"
+  description = "The IP address of the Infoblox server"
+}
 
-  infoblox_ip_address = ""
-  infoblox_user = "admin"
-  infoblox_user_password = ""
-  network = ""
-  hostname = ""
+variable "infoblox_user" {
+  type = "string"
+  description = "The user name to access the Infoblox server"
+}
+
+variable "infoblox_user_password" {
+  type = "string"
+  description = "The user password to access the Infoblox server"
+}
+
+variable "network" {
+  type = "string"
+  description = "The network from which to get an IP address"
+}
+
+module "infoblox_integration" {
+  source = "github.com/IBM-CAMHub-Open/template_integration_infoblox/other/terraform"
+
+  infoblox_ip_address = "${var.infoblox_ip_address}"
+  infoblox_user = "${var.infoblox_user}"
+  infoblox_user_password = "${var.infoblox_user_password}"
+  network = "${var.network}"
+  hostname = "${var.WASNode01-name}"
+  domain = "${var.WASNode01_domain}"
 }
 
 # vsphere vm
@@ -403,7 +424,7 @@ resource "vsphere_virtual_machine" "WASNode01" {
         host_name = "${var.WASNode01-name}"
       }
     network_interface {
-      ipv4_address = "${module.infoblox_integration.assigned_ip_addressip}"
+      ipv4_address = "${module.infoblox_integration.assigned_ip_address}"
       ipv4_netmask = "${var.WASNode01_ipv4_prefix_length}"
     }
     ipv4_gateway = "${var.WASNode01_ipv4_gateway}"

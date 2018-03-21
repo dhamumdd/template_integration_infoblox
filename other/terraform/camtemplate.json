@@ -1,5 +1,5 @@
 {
-	"name": "Infoblox Integration",
+	"name": "Infoblox Integration Template",
 	"description": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
 	"version": "1.0",
 	"imageUrl": "",
@@ -23,7 +23,7 @@
 		}
 	},
 	"metadata": {
-		"displayName": "Infoblox Integration",
+		"displayName": "Infoblox Integration Template",
 		"providerDisplayName": "Other",
 		"longDescription": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
 		"bullets": [{
@@ -40,7 +40,7 @@
 			},
 			{
 				"title": "Software Deployed",
-				"description": "N/A<br>"
+				"description": "N/A This script is run locally on the terraform server.<br>"
 			},
 			{
 				"title": "Default Virtual Machine Settings",
@@ -48,7 +48,7 @@
 			},
 			{
 				"title": "Usage and Special Notes",
-				"description": "The Infoblox Integration module, with an output of assigned_ip_address, can be composed with other Terraform configurations which require an IP address as input.<br>"
+				"description": "1. The Infoblox Integration module, with an output of assigned_ip_address, can be composed with other Terraform configurations which require an IP address as input.<br>2. A functional and reachable Infoblox service is required prior to running this template.<br>3. On deletion, this template will release the IP Address from the Infoblox pool.<br>"
 			}
 		],
 		"featuredImageUrl": "",
