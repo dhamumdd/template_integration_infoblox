@@ -12,7 +12,7 @@ Copyright IBM Corp. 2018
 
 ## Description
 
-This template gets and returns an IP address from Infoblox via camc_scriptpackage. This template should be used to generated an IP Address for a Virtual Mahcine prior to creation.
+This template gets and returns an IP address from Infoblox via camc_scriptpackage. This template should be used to generated an IP Address for a Virtual Machine prior to creation.
 
 ## Integration Method
 
