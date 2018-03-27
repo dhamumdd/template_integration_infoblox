@@ -1,4 +1,9 @@
 {
+  "input_datatypes": [
+    {
+        "name": "com_infoblox"
+    }
+    ],
   "template_input_params": [
     {
       "name": "hostname",
@@ -20,7 +25,8 @@
       "label": "Domain Name",
       "hidden": false,
       "immutable": false,
-      "group_name": "infoblox"
+      "group_name": "infoblox",
+      "default": "${com_infoblox.domain}"
     },
     {
       "name": "infoblox_ip_address",
@@ -31,7 +37,8 @@
       "label": "Infoblox Server IP Address",
       "hidden": false,
       "immutable": false,
-      "group_name": "infoblox"
+      "group_name": "infoblox",
+      "default": "${com_infoblox.infoblox_ip_address}"
     },
     {
       "name": "infoblox_user",
@@ -42,7 +49,8 @@
       "label": "Infoblox User",
       "hidden": false,
       "immutable": false,
-      "group_name": "infoblox"
+      "group_name": "infoblox",
+      "default": "${com_infoblox.infoblox_user}"
     },
     {
       "name": "infoblox_user_password",
@@ -53,7 +61,8 @@
       "label": "Infoblox User Password",
       "hidden": false,
       "immutable": false,
-      "group_name": "infoblox"
+      "group_name": "infoblox",
+      "default": "${com_infoblox.infoblox_user_password}"
     },
     {
       "name": "network",
@@ -64,7 +73,8 @@
       "label": "Network",
       "hidden": false,
       "immutable": false,
-      "group_name": "infoblox"
+      "group_name": "infoblox",
+      "default": "${com_infoblox.network}"
     }
   ],
   "template_output_params": [
