@@ -45,13 +45,22 @@ curerespo=`curl -k \
                  -u ${PARAM_USER}:${PARAM_PASSWORD}  \
                  -H 'content-type: application/json' \
                  -X POST "https://${PARAM_IPAMIP}/wapi/v2.6.1/record:host?_return_fields%2B=name,ipv4addrs&_return_as_object=1" \
-                 -d "${full_json}"`
+                 -d "${full_json}" 2>/dev/null`
 
 
 address=`echo $curerespo | jq -r '.result .ipv4addrs[0].ipv4addr'`
 host=`echo $curerespo | jq -r '.result .ipv4addrs[0].host'`
 short_host=`echo $host |  cut -d'.' -f 1`
 domain=`echo $host |  cut -d'.' -f 2-`
+
+if [ $address == "null" ]; then
+  error=`echo $curerespo | jq -r '.text'`
+  if [ "$error" == "null" ]; then
+    error=$curerespo
+  fi
+  echo "The request to retrieve an IP address from Infoblox failed. Error message: $error" >&2
+  exit 1
+fi
 
 #echo $address
 #echo $host

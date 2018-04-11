@@ -16,12 +16,14 @@
 # =================================================================
 
 resource "camc_scriptpackage" "GetIP" {
-  program = ["/bin/bash", "${path.module}/scripts/get_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-p", "${var.infoblox_user_password}", "-n", "${var.network}", "-h", "${var.hostname}", "-d", "${var.domain}"]
+  program = ["/bin/bash", "${path.module}/scripts/get_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-n", "${var.network}", "-h", "${var.hostname}", "-d", "${var.domain}"]
+  program_sensitive = ["-p", "${var.infoblox_user_password}"]
   on_create = true
 }
 
 resource "camc_scriptpackage" "ReturnIP" {
   depends_on = ["camc_scriptpackage.GetIP"]
-  program = ["/bin/bash", "${path.module}/scripts/return_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-p", "${var.infoblox_user_password}", "-h", "${lookup(camc_scriptpackage.GetIP.result, var.assigned_ip_address)}"]
+  program = ["/bin/bash", "${path.module}/scripts/return_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-h", "${lookup(camc_scriptpackage.GetIP.result, var.assigned_ip_address)}"]
+  program_sensitive = ["-p", "${var.infoblox_user_password}"]
   on_delete = true
 }
