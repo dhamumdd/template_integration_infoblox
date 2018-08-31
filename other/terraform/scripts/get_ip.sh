@@ -26,6 +26,7 @@ while test $# -gt 0; do
   [[ $1 =~ ^-h|--hostname ]] && { PARAM_HOSTNAME="${2}"; shift 2; continue; };
   [[ $1 =~ ^-d|--domain ]] && { PARAM_DOMAIN="${2}"; shift 2; continue; };
   [[ $1 =~ ^-n|--network ]] && { PARAM_NETWORK="${2}"; shift 2; continue; };
+  [[ $1 =~ ^-s|--dns ]] && { PARAM_DNS="${2}"; shift 2; continue; };
   break;
 done
 
@@ -34,7 +35,7 @@ json_hostname="{\"name\":\"${PARAM_HOSTNAME}.${PARAM_DOMAIN}\""
 #echo $json_network
 #echo $json_hostname
 
-json="${json_hostname},\"ipv4addrs\":[{\"ipv4addr\":{\"_object_function\":\"next_available_ip\",\"_result_field\":\"ips\",\"_object\""
+json="${json_hostname},\"configure_for_dns\":${PARAM_DNS},\"ipv4addrs\":[{\"ipv4addr\":{\"_object_function\":\"next_available_ip\",\"_result_field\":\"ips\",\"_object\""
 json2=" : \"network\",\"_object_parameters\":${json_network}}}}]}"
 
 

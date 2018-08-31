@@ -25,6 +25,7 @@ variable "infoblox_user_password" { type = "string" description = "The user pass
 variable "network" { type = "string" description = "The network from which to get an IP address" }
 variable "hostname" { type = "string" description = "The hostname to associate with the IP address" }
 variable "domain" { type = "string" description = "The domain to associate with the IP address" }
+variable "configure_for_dns" { type = "string" description = "Indicates that DNS should be updated when the host record is updated." }
 
 ##############################################################
 # Result variables. Terraform requires variables rather
