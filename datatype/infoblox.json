@@ -34,6 +34,17 @@
             "immutable": false
           },
           {
+            "name": "configure_for_dns",
+            "description": "Indicates that infoblox server needs to configure the DNS server when the host record is enable.",
+            "type": "boolean",
+            "required": true,
+            "secured": false,
+            "default": false,
+            "label": "Configure DNS",
+            "hidden": false,
+            "immutable": false
+        },
+          {
             "name": "domain",
             "description": "The domain name to associate with the host names on the requested IP address",
             "type": "string",

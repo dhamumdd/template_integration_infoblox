@@ -23,6 +23,17 @@
       "group_name": "infoblox"
     },
     {
+      "name": "configure_for_dns",
+      "description": "Indicates that infoblox server needs to configure the DNS server when the host record is enable.",
+      "type": "boolean",
+      "required": true,
+      "secured": false,
+      "label": "Configure DNS",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "infoblox"
+    },
+    {
       "name": "infoblox_ip_address",
       "description": "The IP address of the Infoblox server.",
       "type": "string",

@@ -1,7 +1,7 @@
 {
 	"name": "Infoblox Integration Template",
 	"description": "This template gets and returns an IP address from Infoblox via camc_scriptpackage",
-	"version": "1.0",
+	"version": "2.0.1",
 	"imageUrl": "",
 	"image": "",
 	"type": "integration",

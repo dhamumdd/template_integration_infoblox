@@ -16,7 +16,7 @@
 # =================================================================
 
 resource "camc_scriptpackage" "GetIP" {
-  program = ["/bin/bash", "${path.module}/scripts/get_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-n", "${var.network}", "-h", "${var.hostname}", "-d", "${var.domain}"]
+  program = ["/bin/bash", "${path.module}/scripts/get_ip.sh", "-i", "${var.infoblox_ip_address}", "-u", "${var.infoblox_user}", "-n", "${var.network}", "-h", "${var.hostname}", "-d", "${var.domain}", "-s", "${var.configure_for_dns}"]
   program_sensitive = ["-p", "${var.infoblox_user_password}"]
   on_create = true
 }

@@ -34,3 +34,4 @@ variable "domain" { type = "string" description = "The domain to associate with 
 variable "assigned_ip_address" { type = "string" description = "The IP address assigned from Infoblox IPAM" default = "ipaddress" }
 variable "associated_hostname" { type = "string" description = "The hostname associated with the assigned IP address" default = "hostname" }
 variable "associated_domain" { type = "string" description = "The domain associated with the assigned IP address" default = "domain" }
+variable "configure_for_dns" { type = "string" description = "Indicates that DNS should be updated when the host record is updated." }
